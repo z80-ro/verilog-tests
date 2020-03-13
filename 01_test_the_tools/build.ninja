@@ -8,11 +8,15 @@ rule placeroute
 rule pack
   command = icepack $in $out
 
+rule program
+  command = iceprog $in
+
 build test.json: synthesize test.v
 
 build test.asc: placeroute test.json
 
 build test.bin: pack test.asc
 
+build prog: program test.bin
 
 
