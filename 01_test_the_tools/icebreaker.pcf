@@ -1,0 +1,4 @@
+set_io BTN_A        18
+set_io BTN_B        19
+set_io LED_GREEN    40
+

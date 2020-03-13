@@ -1,0 +1,18 @@
+
+rule synthesize
+  command = yosys -ql yosys-output.log -p 'synth_ice40 -top top -json $out' $in
+
+rule placeroute
+  command = nextpnr-ice40 --pcf-allow-unconstrained --up5k --package sg48 --json $in --pcf icebreaker.pcf --asc $out
+
+rule pack
+  command = icepack $in $out
+
+build test.json: synthesize test.v
+
+build test.asc: placeroute test.json
+
+build test.bin: pack test.asc
+
+
+
