@@ -1,0 +1,13 @@
+set_io LED_USR_RED  11
+set_io LED_USR_GRN  37
+set_io LED_RED      26
+set_io LED_GREEN2   27
+set_io LED_GREEN3   25
+set_io LED_GREEN4   23
+set_io LED_GREEN5   21
+
+set_io BTN_USR      10
+set_io BTN_1        20
+set_io BTN_2        19
+set_io BTN_3        18
+

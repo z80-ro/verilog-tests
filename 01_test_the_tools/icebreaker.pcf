@@ -1,6 +1,0 @@
-set_io BTN_A        18
-set_io BTN_B        20
-set_io BTN_USR      10
-set_io LED_RED      11
-set_io LED_GREEN    37
-
