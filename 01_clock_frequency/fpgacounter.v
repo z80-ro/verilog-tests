@@ -8,8 +8,8 @@ module top (
 
 reg [31:0] counter;
 
-assign LED_GREEN5 = counter[4];
-assign LED_GREEN4 = counter[2];
+assign LED_GREEN5 = counter[22];
+assign LED_GREEN4 = counter[20];
 
 always @(posedge CLK or negedge BTN_USR) begin
     if (BTN_USR == 0) 
