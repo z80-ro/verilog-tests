@@ -1,0 +1,22 @@
+
+rule synthesize
+  command = yosys -ql yosys-output.log -p 'synth_ice40 -top top -json $out' $in
+
+rule placeroute
+  command = nextpnr-ice40 --pcf-allow-unconstrained --up5k --package sg48 --json $in --pcf icebreaker.pcf --asc $out
+
+rule pack
+  command = icepack $in $out
+
+rule program
+  command = iceprog $in
+
+build fpgacounter.json: synthesize fpgacounter.v pll.v
+
+build fpgacounter.asc: placeroute fpgacounter.json
+
+build fpgacounter.bin: pack fpgacounter.asc
+
+build prog: program fpgacounter.bin
+
+
